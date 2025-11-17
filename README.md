@@ -25,6 +25,8 @@ cd Voice_Gpt
 > The SDK was rewritten in v1, which was released November 6th 2023. See the [v1 migration guide](https://github.com/openai/openai-python/discussions/742), which includes scripts to automatically update your code.
 
 ```sh
+sudo apt update
+sudo apt install python3-dev portaudio19-dev python3-pyaudio espeak ffmpeg libasound2-dev alsa-utils
 pip install openai
 ```
  ## Install Requriments.txt
