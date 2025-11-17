@@ -1,19 +1,31 @@
-import datetime
 from datetime import datetime
-from wish.wish import speak , wish
+from wish.wish import speak, wish
 from voiceinp.voiceinp import voiceinp
 from ai.ai import ai
 
-x=datetime.now()
-t = x.strftime('%I:%M:%p')
-y = x.year
-d = x.strftime('%A')
-wish()
-if __name__ == '__main__':
+if __name__ == "__main__":
+    wish()  
+
     while True:
-        print (t, y)
+        # Update time on every loop
+        now = datetime.now()
+        t = now.strftime('%I:%M %p')
+        y = now.year
+        d = now.strftime('%A')
+
+        print(t, y)
         print(d)
-        query = voiceinp().lower()
+
+        # Take voice input
+        query = voiceinp().lower().strip()
+
+        if query == "" or query == " ":
+            speak("Please say that again.")
+            continue
+
+        # Get AI response
         ans = ai(query)
         print(ans)
+
+        # Speak the response
         speak(ans)
