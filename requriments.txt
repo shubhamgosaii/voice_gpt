@@ -1,4 +1,8 @@
-pyttsx3
-datetime
 openai
-SpeechRecognition
+python-dotenv
+speechrecognition
+pyaudio
+pyttsx3
+pydub
+requests
+playsound
